@@ -10,3 +10,7 @@ Features
 - RISC-V assembly toolchain
 
 Simulation verified in Xilinx Vivado.
+
+What is what in this repo:
+- asm is where the assembly lives that the processor can pull and run
+- sim is where the testbench lives
