@@ -1,18 +1,48 @@
-32-bit RISC-V Pipelined Processor in SystemVerilog
+# 32-bit RISC-V Pipelined Processor (SystemVerilog)
 
-Features
-- 5-stage pipeline (IF, ID, EX, MEM, WB)
-- Hazard detection
-- Forwarding unit
-- Branch and jump support
-- Instruction & data memory
-- SystemVerilog testbench
-- RISC-V assembly toolchain
+A custom **32-bit RV32I pipelined CPU** implemented in SystemVerilog and verified in simulation using Xilinx Vivado.
 
-Simulation verified in Xilinx Vivado.
+## Features
 
-What is what in this repo:
-- asm is where the assembly lives that the processor can pull and run
-- sim is where the testbench lives
-- rtl is where the actual components of the cpu live
-- - the most important rtl file is the 
+* 5-stage pipeline: **IF → ID → EX → MEM → WB**
+* Hazard detection unit (pipeline stall logic)
+* Forwarding unit (data hazard resolution)
+* Branch and jump support (BEQ, JAL, JALR)
+* Instruction and data memory
+* SystemVerilog verification testbench
+* RISC-V assembly toolchain support
+
+Simulation verified in **Xilinx Vivado**.
+
+## Repository Structure
+
+```
+rtl/   -> CPU RTL modules (pipeline stages, ALU, control logic, hazard/forward units)
+sim/   -> SystemVerilog testbenches
+asm/   -> RISC-V assembly programs executed by the CPU
+```
+
+Key modules:
+
+* `cpuPipelined.sv` – Top-level CPU pipeline implementation
+* `controlUnit.sv` – Instruction decode and control signal generation
+* `hazardUnit.sv` – Pipeline stall logic
+* `forwardUnit.sv` – Data forwarding logic
+* `ALU.sv` – Arithmetic logic unit
+
+## Example Program
+
+The included assembly program demonstrates pipeline execution and arithmetic operations.
+Example output from simulation:
+
+```
+x1 = 11
+x2 = 55
+PASS: sum 1..10 program
+```
+
+## Tools Used
+
+* SystemVerilog
+* Xilinx Vivado Simulator
+* RISC-V GNU Toolchain
