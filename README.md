@@ -4,7 +4,7 @@ A custom **32-bit RV32I pipelined CPU** implemented in SystemVerilog and verifie
 
 ## Features
 
-* 5-stage pipeline: **IF → ID → EX → MEM → WB**
+* 5-stage pipeline: **IF -> ID -> EX -> MEM -> WB**
 * Hazard detection unit (pipeline stall logic)
 * Forwarding unit (data hazard resolution)
 * Branch and jump support (BEQ, JAL, JALR)
