@@ -1,0 +1,24 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  --include "../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef" \
+"../../../../riscProcessorSV.srcs/sources_1/new/ALU.sv" \
+"../../../../riscProcessorSV.srcs/sources_1/new/EX_MEM.sv" \
+"../../../../riscProcessorSV.srcs/sources_1/new/ID_EX.sv" \
+"../../../../riscProcessorSV.srcs/sources_1/new/IF_ID.sv" \
+"../../../../riscProcessorSV.srcs/sources_1/new/MEM_WB.sv" \
+"../../../../riscProcessorSV.srcs/sources_1/new/PCReg.sv" \
+"../../../../riscProcessorSV.srcs/sources_1/new/aluControl.sv" \
+"../../../../riscProcessorSV.srcs/sources_1/new/controlUnit.sv" \
+"../../../../riscProcessorSV.srcs/sources_1/new/cpuPipelined.sv" \
+"../../../../riscProcessorSV.srcs/sources_1/new/dataMem.sv" \
+"../../../../riscProcessorSV.srcs/sources_1/new/forwardUnit.sv" \
+"../../../../riscProcessorSV.srcs/sources_1/new/hazardUnit.sv" \
+"../../../../riscProcessorSV.srcs/sources_1/new/immGen.sv" \
+"../../../../riscProcessorSV.srcs/sources_1/new/instrMem.sv" \
+"../../../../riscProcessorSV.srcs/sources_1/new/regFilSV.sv" \
+"../../../../riscProcessorSV.srcs/sim_1/new/tb_cpuPipelined.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
